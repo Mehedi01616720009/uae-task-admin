@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/custom.css" />
+
+        <title>Saravex Admin - Category</title>
+    </head>
+    <body>
+        <!-- sidebar -->
+        <div
+            class="nav__menu w-[300px] h-full fixed top-0 -left-[300px] lg:left-0 bg-slate-100 px-10 py-6 transition-all z-50"
+            id="nav-menu"
+        >
+            <h2 class="text-4xl font-bold mb-8">Saravex</h2>
+
+            <!-- nav close -->
+            <i
+                class="bi bi-x-square-fill text-3xl leading-4 absolute top-0 right-0 cursor-pointer lg:hidden"
+                id="nav-close"
+            ></i>
+
+            <!-- menu -->
+            <div class="flex flex-col gap-3 text-lg">
+                <a
+                    href="index.html"
+                    class="nav_link block hover:text-green-500"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="orders.html"
+                    class="nav_link block hover:text-green-500"
+                >
+                    Orders
+                </a>
+
+                <a
+                    href="categories.html"
+                    class="nav_link block hover:text-green-500"
+                >
+                    Categories
+                </a>
+
+                <a
+                    href="products.html"
+                    class="nav_link block hover:text-green-500"
+                >
+                    Products
+                </a>
+            </div>
+        </div>
+
+        <!-- main content -->
+        <div class="px-5 lg:ml-[300px]">
+            <!-- topbar -->
+            <div>
+                <div class="flex justify-between items-center py-2">
+                    <div>
+                        <!-- nav toggle btn -->
+                        <i
+                            class="bi bi-list text-3xl cursor-pointer lg:hidden"
+                            id="nav-toggle"
+                        ></i>
+                    </div>
+
+                    <!-- user dropdown -->
+                    <div class="toggle_dropdown relative">
+                        <div
+                            class="toggle_btn flex items-center gap-2 cursor-pointer"
+                        >
+                            <div class="toggle_btn_trigger text-right">
+                                <h4 class="toggle_btn_trigger font-semibold">
+                                    Mehedi
+                                </h4>
+                                <p class="toggle_btn_trigger text-sm">Admin</p>
+                            </div>
+
+                            <i
+                                class="bi bi-caret-down-fill toggle_btn_trigger"
+                            ></i>
+                        </div>
+
+                        <div
+                            class="toggle_dropdown_list min-w-[100px] absolute py-2 flex-col top-full right-0 hidden shadow-sm rounded"
+                        >
+                            <a href="" class="hover:bg-slate-50 px-3 py-1"
+                                >Profile</a
+                            >
+                            <a href="" class="hover:bg-slate-50 px-3 py-1"
+                                >Logout</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- contents -->
+            <div>
+                <div class="flex mb-8">
+                    <a
+                        href="add-category.html"
+                        class="bg-slate-800 text-white px-3 py-1 rounded-lg flex"
+                    >
+                        Add Category
+                    </a>
+                </div>
+
+                <div>
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b">
+                                <th>SI</th>
+                                <th class="text-left">Name</th>
+                                <th class="text-left">Priority</th>
+                                <th class="text-left">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="hover:bg-slate-50 border-b">
+                                <td class="text-center px-2 py-1">1</td>
+                                <td class="px-2 py-1">Dairy</td>
+                                <td class="px-2 py-1">1</td>
+                                <td class="px-2 py-1">
+                                    <div class="flex gap-2 items-center">
+                                        <a
+                                            href="edit-category.html"
+                                            class="bg-slate-800 text-white px-3 py-1 rounded-lg flex"
+                                        >
+                                            Edit
+                                        </a>
+
+                                        <button
+                                            data-modal-target="#example"
+                                            class="bg-slate-800 text-white px-3 py-1 rounded-lg flex"
+                                        >
+                                            Delete
+                                        </button>
+
+                                        <!--===== modal =====-->
+                                        <div
+                                            class="modal_container fixed w-full h-full z-20 top-0 left-0 grid items-end overflow-hidden invisible opacity-0"
+                                            id="example"
+                                        >
+                                            <div
+                                                class="absolute w-full h-full bg-black/70 top-0 left-0"
+                                            ></div>
+                                            <div
+                                                class="modal_content relative bg-white px-8 py-10 transition-all rounded-t-xl md:rounded-xl md:w-[470px] md:m-auto"
+                                            >
+                                                <div
+                                                    class="w-8 h-8 flex justify-center items-center text-white bg-slate-700 rounded cursor-pointer absolute top-6 right-6"
+                                                    title="Close"
+                                                    data-close-button
+                                                >
+                                                    <i class="bi bi-x"></i>
+                                                </div>
+
+                                                <h4
+                                                    class="text-xl font-semibold"
+                                                >
+                                                    Modal Title
+                                                </h4>
+
+                                                <div class="modal_body">
+                                                    <h3>hello modal</h3>
+
+                                                    <div
+                                                        class="flex items-center gap-2 mt-4"
+                                                    >
+                                                        <button
+                                                            class="px-3 py-1 bg-red-500 text-white rounded"
+                                                            data-close-button
+                                                        >
+                                                            Cancel
+                                                        </button>
+
+                                                        <button
+                                                            class="px-3 py-1 bg-green-500 text-white rounded"
+                                                        >
+                                                            Confirm
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
