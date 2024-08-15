@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/custom.css" />
+
+        <title>Saravex Admin - Category</title>
+    </head>
+    <body>
+        <!-- sidebar -->
+        <div
+            class="nav__menu w-[300px] h-full fixed top-0 -left-[300px] lg:left-0 bg-slate-100 px-10 py-6 transition-all z-50"
+            id="nav-menu"
+        >
+            <h2 class="text-4xl font-bold mb-8">Saravex</h2>
+
+            <!-- nav close -->
+            <i
+                class="bi bi-x-square-fill text-3xl leading-4 absolute top-0 right-0 cursor-pointer lg:hidden"
+                id="nav-close"
+            ></i>
+
+            <!-- menu -->
+            <div class="flex flex-col gap-3 text-lg">
+                <a
+                    href="index.html"
+                    class="nav_link block hover:text-green-500"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="orders.html"
+                    class="nav_link block hover:text-green-500"
+                >
+                    Orders
+                </a>
+
+                <a
+                    href="categories.html"
+                    class="nav_link block hover:text-green-500"
+                >
+                    Categories
+                </a>
+
+                <a
+                    href="products.html"
+                    class="nav_link block hover:text-green-500"
+                >
+                    Products
+                </a>
+            </div>
+        </div>
+
+        <!-- main content -->
+        <div class="px-5 lg:ml-[300px]">
+            <!-- topbar -->
+            <div>
+                <div class="flex justify-between items-center py-2">
+                    <div>
+                        <!-- nav toggle btn -->
+                        <i
+                            class="bi bi-list text-3xl cursor-pointer lg:hidden"
+                            id="nav-toggle"
+                        ></i>
+                    </div>
+
+                    <!-- user dropdown -->
+                    <div class="toggle_dropdown relative">
+                        <div
+                            class="toggle_btn flex items-center gap-2 cursor-pointer"
+                        >
+                            <div class="toggle_btn_trigger text-right">
+                                <h4 class="toggle_btn_trigger font-semibold">
+                                    Mehedi
+                                </h4>
+                                <p class="toggle_btn_trigger text-sm">Admin</p>
+                            </div>
+
+                            <i
+                                class="bi bi-caret-down-fill toggle_btn_trigger"
+                            ></i>
+                        </div>
+
+                        <div
+                            class="toggle_dropdown_list min-w-[100px] absolute py-2 flex-col top-full right-0 hidden shadow-sm rounded"
+                        >
+                            <a href="" class="hover:bg-slate-50 px-3 py-1"
+                                >Profile</a
+                            >
+                            <a href="" class="hover:bg-slate-50 px-3 py-1"
+                                >Logout</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- contents -->
+            <div>
+                <h2 class="text-2xl font-semibold mb-6">Add Product</h2>
+
+                <form action="" method="post" class="grid md:grid-cols-2 gap-4">
+                    <div class="grid gap-1">
+                        <label for="name">Product Name</label>
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            class="outline-none bg-slate-50 px-5 py-2 rounded-md"
+                            placeholder="Product Name"
+                        />
+                    </div>
+
+                    <div class="grid gap-1">
+                        <label for="price">Product Price</label>
+                        <input
+                            type="text"
+                            name="price"
+                            id="price"
+                            class="outline-none bg-slate-50 px-5 py-2 rounded-md"
+                            placeholder="Product Price"
+                        />
+                    </div>
+
+                    <div class="grid gap-1">
+                        <label for="stock_status">Product Stock</label>
+                        <select
+                            name="stock_status"
+                            id="stock_status"
+                            class="outline-none bg-slate-50 px-5 py-2 rounded-md"
+                        >
+                            <option value="in stock">In Stock</option>
+                            <option value="out of stock">Out of Stock</option>
+                        </select>
+                    </div>
+
+                    <div class="grid gap-1">
+                        <label for="category">Product Category</label>
+                        <select
+                            name="category"
+                            id="category"
+                            class="outline-none bg-slate-50 px-5 py-2 rounded-md"
+                        >
+                            <option value="">Choose Category</option>
+                            <option value="dairy">Dairy</option>
+                        </select>
+                    </div>
+
+                    <div class="grid gap-1 md:col-span-2">
+                        <label for="description">Product Description</label>
+                        <textarea
+                            name="description"
+                            id="description"
+                            class="outline-none bg-slate-50 px-5 py-2 rounded-md"
+                        ></textarea>
+                    </div>
+
+                    <div>
+                        <button
+                            type="submit"
+                            class="bg-slate-800 text-white px-5 py-2 rounded-lg flex"
+                        >
+                            Add
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--========== CKEDITOR JS =============-->
+        <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
+
+        <script>
+            /*========== POST DESCRIPTION CKEDITOR =============*/
+            CKEDITOR.replace("description");
+        </script>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
